@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'CS Rocky';
+    src: local('CS Rocky');
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    align-items: center;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10px;
+    font-family: 'CS Rocky';
+}
+
+img{
+    width: 10%;
+}
+
+a{
+    margin: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #ffb800;
+    transition: all 0.5s;
+}
