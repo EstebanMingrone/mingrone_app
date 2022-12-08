@@ -1,18 +1,19 @@
 import React from 'react';
 import logo from '../../assets/LOGO 3.png';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 //import './NavBar.css';
+import CartWidget from './CartWidget.js';
+
 
 const NavBar = ()=> {
     return(
         <header style={styles.container}>
             <img style={styles.imgStyle} src={logo} alt=""></img>
             <nav style={styles.navStyle}>
-                <a style={styles.anchors} href="">Acústicas</a>
+                <a style={styles.anchors} className='anchors' href="">Acústicas</a>
                 <a style={styles.anchors} href="">Eléctricas</a>
                 <a style={styles.anchors} href="">Bajos</a>
             </nav>
-            <AddShoppingCartIcon sx={{ fontSize: 40 }} />
+            <CartWidget/>
         </header>
         
     )
