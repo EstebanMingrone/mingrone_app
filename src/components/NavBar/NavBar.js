@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../assets/LOGO 3.png';
 //import './NavBar.css';
 import CartWidget from './CartWidget.js';
+import {Link} from "react-router-dom"
 
 
 const NavBar = ()=> {
@@ -9,9 +10,15 @@ const NavBar = ()=> {
         <header style={styles.container}>
             <img style={styles.imgStyle} src={logo} alt=""></img>
             <nav style={styles.navStyle}>
-                <a style={styles.anchors} className='anchors' href="">Acústicas</a>
-                <a style={styles.anchors} href="">Eléctricas</a>
-                <a style={styles.anchors} href="">Bajos</a>
+                <Link to="/category/acusticas">                
+                    <a style={styles.anchors} className='anchors' href="">Acústicas</a>
+                </Link>
+                <Link to="/category/electricas">
+                    <a style={styles.anchors} href="">Eléctricas</a>
+                </Link>
+                <Link to="/category/bajos">
+                    <a style={styles.anchors} href="">Bajos</a>
+                </Link>
             </nav>
             <CartWidget/>
         </header>
