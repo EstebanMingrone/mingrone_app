@@ -1,39 +1,23 @@
-import './ItemListContainer.css';
-import { Text, CircularProgress } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getProducts } from "./functions";
-import ItemList from "./ItemList";
+import "../styles/NavBar.css"
+import { Link } from "react-router-dom";
 
-const ItemListContainer = () => {
-    const [products, setProducts] = useState([]);
-    let { categoryId } = useParams();
-    const [loading, setLoading] = useState(true);
-  
-    useEffect(() => {
-      getProducts(categoryId)
-        .then((products) => setProducts(products))
-        .catch((error) => console.log(error))
-        .finally(() => setLoading(false));
-    }, [categoryId]);
-  
-    return (
-      <>
-        <h1>
-          {categoryId ? `Tipo ${categoryId}` : "Todos los instrumentos"}
-        </h1>
-        <div className="list-container">
-          {loading ? (
-            <CircularProgress isIndeterminate color="green.300" />
-          ) : products.length > 0 ? (
-            <ItemList products={products} />
-          ) : (
-            <h1>Productos no encontrados</h1>
-          )}
-        </div>
-      </>
-    );
-  };
-  
+const ItemListContainer = (props)=>{
+    return(
+        <>
+            <ul className="navCategories">
+                <li>
+                    <Link to="category/acustica"> {props.acusticas} </Link>
+                </li>
+                <li>
+                    <Link to="category/electrica">{props.electricas}</Link>
+                </li>
+                <li>
+                    <Link to="category/bajo">{props.bajos}</Link>
+                </li>
+            </ul>
+        </>
+    )
+}
 
 export default ItemListContainer;
+

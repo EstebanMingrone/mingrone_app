@@ -1,0 +1,15 @@
+.cart-container{
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+}
+
+.cart-number{
+    font-family: 'CS Rocky';
+    font-size: 12px;
+    background-color:#ffb800;
+    border-radius: 20px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+}

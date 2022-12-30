@@ -1,15 +1,19 @@
 import React from 'react';
 import NavBar from './components/NavBar/NavBar.js';
-import ItemListContainer from './components/NavBar/ItemListContainer.js';
-import ItemCount from './components/NavBar/ItemCount.js';
+import CardItemsContainer from './components/Items/CardItemsContainer.js';
+import DetailsItem from './components/Items/DetailsItem.jsx';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const App = ()=> {
   return(
-    <>
-    <NavBar></NavBar>
-    <ItemListContainer title='¡Ups! A veces el mejor sonido es el silencio. Web en desarrollo.'/>
-    <ItemCount stock={5} initial="1"/>
-    </>
+    <BrowserRouter>
+      <NavBar/>
+      <Routes>
+        <Route path='/' element={ <CardItemsContainer/> }/>
+        <Route path='/item/:idItem' element={ <DetailsItem/> }/>
+        <Route path='/category/:idCategory' element={ <CardItemsContainer/> }/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

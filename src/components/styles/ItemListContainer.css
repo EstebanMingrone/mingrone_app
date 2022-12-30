@@ -1,0 +1,9 @@
+h2{
+    font-family: 'CS Rocky';
+}
+
+.containerCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
